@@ -9,16 +9,15 @@ RSpec.describe Park do
       :operatingHours=>[{:standardHours=>{:wednesday=>"All Day", :monday=>"All Day", :thursday=>"All Day", :sunday=>"All Day", :tuesday=>"All Day", :friday=>"All Day", :saturday=>"All Day"}}]
     }
 
-    formatted_hours = ["wednesday: All Day",
-    "monday: All Day",
-    "thursday: All Day",
-    "sunday: All Day",
-    "tuesday: All Day",
-    "friday: All Day",
-    "saturday: All Day"]
+    formatted_hours = {:wednesday=>"All Day",
+      :monday=>"All Day",
+      :thursday=>"All Day",
+      :sunday=>"All Day",
+      :tuesday=>"All Day",
+      :friday=>"All Day",
+      :saturday=>"All Day"}
 
     park = Park.new(data)
-
     expect(park).to be_a(Park)
     expect(park.name).to eq(data[:fullName])
     expect(park.description).to eq(data[:description])

@@ -1,5 +1,5 @@
 class ParkService
-  def park_by_state(state)
+  def parks_by_state(state)
     get_url("/api/v1/parks?stateCode=#{state}")
   end
 
@@ -10,7 +10,7 @@ class ParkService
 
   def conn
     Faraday.new(url: "https://developer.nps.gov") do |f|
-      f.params["api_key"] = ENV["porks_key"]
+      f.params["api_key"] = ENV["parks_key"]
     end
   end
 end

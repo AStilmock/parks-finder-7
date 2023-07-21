@@ -2,9 +2,8 @@ require "rails_helper"
 
 RSpec.describe "Park Service" do
   it "can search for park by state" do
-    search = ParkService.new.park_by_state("TN")
+    search = ParkService.new.parks_by_state("TN")
     park = search[:data].first
-
     expect(search).to be_a(Hash)
     expect(park).to have_key(:fullName)
     expect(park[:fullName]).to be_a(String)

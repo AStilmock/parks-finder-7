@@ -1,0 +1,10 @@
+<% @parks.each do |park| %>
+  <h1><%= park.name %></h1>
+  <p><%= park.description %></p>
+  <p><%= park.directions %></p>
+  <ul>
+  <% park.hours.each do |hour| %>
+    <li><%= hour %></li>
+  <% end %>
+  </ul>
+<% end %>
